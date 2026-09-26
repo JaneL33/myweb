@@ -3,31 +3,67 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="나루의 작은 홈페이지" />
+    <meta name="description" content="나루의 개인 홈페이지" />
     <title>나루</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="home">
-      <div class="banner" aria-hidden="true">
-        <img src="assets/banner.jpg" alt="" />
+    <div class="site-shell">
+      <header class="site-header"><img src="assets/figma/header-art.png" alt="" /></header>
+      <div class="marquee" aria-label="공지"><img src="assets/figma/marquee.png" alt="" /></div>
+      <div class="site-grid">
+        <aside class="left-rail" aria-label="주 메뉴">
+          <div class="profile-image"><img src="assets/figma/profile.png" alt="프로필 이미지" /></div>
+          <div class="small-banner"><img src="assets/figma/sidebar-banner.png" alt="" /></div>
+          <div class="status-panel" aria-label="상태 메시지"></div>
+          <nav class="site-nav">
+            <a class="is-current" href="#home">홈</a><a href="#about">어바웃 미</a><a href="#calendar">캘린더</a><a href="#gallery">갤러리</a><a href="#original">오리지널</a><a href="#ttrpg">TTRPG</a><a href="#media">미디어 로그</a><a href="#diary">일기장</a><a href="#scrap">스크랩</a><a href="#neighbors">이웃집 식구들</a><a href="#guestbook">방명록</a>
+          </nav>
+          <div class="rail-filler" aria-hidden="true"></div>
+        </aside>
+
+        <main class="main-content" id="home">
+          <section class="game-section" aria-label="추천 게임">
+            <div class="game-screen"><img src="assets/figma/game.png" alt="어두운 방을 배경으로 한 게임 화면" /></div>
+            <div class="game-character"><img src="assets/figma/game-character.png" alt="게임 캐릭터" /></div>
+          </section>
+          <section class="recent-section" aria-labelledby="recent-title">
+            <div class="recent-panel">
+              <h1 class="section-title" id="recent-title">RECENT POSTS</h1>
+              <ol class="post-list">
+                <li><span class="marker">‣</span><a href="#post-1">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                <li><span class="marker">‣</span><a href="#post-2">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                <li><span class="marker">‣</span><a href="#post-3">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                <li><span class="marker">‣</span><a href="#post-4">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                <li><span class="marker">‣</span><a href="#post-5">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                <li><span class="marker">‣</span><a href="#post-6">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+              </ol>
+            </div>
+            <div class="recent-character"><img src="assets/figma/recent-character.png" alt="상자 안에 앉아 있는 인형" /></div>
+          </section>
+          <section class="just-in" aria-labelledby="just-in-title">
+            <h2 class="section-title" id="just-in-title">JUST IN</h2>
+            <div class="media-strip">
+              <article class="media-item"><div class="cover"><img src="assets/figma/raw/source-03.png" alt="파이어 엠블렘: 풍화설월 표지" /></div><p>파이어 엠블렘: 풍화설월</p><a href="#game">게임</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/cover-new-world.png" alt="신세계에서 1 표지" /></div><p>신세계에서 1</p><a href="#book">도서</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/cover-book-one.png" alt="파이널 판타지 6 표지" /></div><p>파이널 판타지 6</p><a href="#game">게임</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/cover-final-fantasy.png" alt="눈물을 마시는 새 1 표지" /></div><p>눈물을 마시는 새 1</p><a href="#book">도서</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/cover-bird.png" alt="CLICK 앨범 이미지" /></div><p>CLICK</p><a href="#music">음악</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/raw/source-03.png" alt="파이어 엠블렘: 풍화설월 표지" /></div><p>파이어 엠블렘: 풍화설월</p><a href="#game">게임</a></article>
+            </div>
+          </section>
+        </main>
+
+        <aside class="right-rail" aria-label="보조 메뉴">
+          <form class="search" role="search"><label class="sr-only" for="site-search">검색</label><input id="site-search" type="search" /><button type="submit" aria-label="검색"></button></form>
+          <div class="ad-slot" aria-label="광고 또는 배너"></div>
+          <section class="events" aria-labelledby="events-title"><h2 class="section-title" id="events-title">EVENTS</h2><a href="#event-1"></a><a href="#event-2"></a><a href="#event-3"></a></section>
+          <section class="inventory" aria-labelledby="inventory-title"><h2 class="section-title" id="inventory-title">INVENTORY</h2><div class="inventory-grid" aria-label="인벤토리 빈 칸"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></section>
+        </aside>
       </div>
-      <section class="intro" aria-labelledby="recent-posts-title">
-        <img class="character" src="assets/character.png" alt="상자 안에 앉아 있는 인형" />
-        <div class="recent-posts">
-          <h1 id="recent-posts-title">✕ 최신글</h1>
-          <ol>
-            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
-            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
-            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
-            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
-            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
-            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
-          </ol>
-        </div>
-      </section>
-      <section class="player-stage" aria-label="음악 플레이어"><div id="webamp-container"></div></section>
-    </main>
+      <footer class="site-footer"></footer>
+    </div>
+    <div id="webamp-container" aria-label="음악 플레이어"></div>
     <script src="webamp/webamp.bundle.min.js"></script>
     <script>
       const container = document.getElementById("webamp-container");
@@ -38,7 +74,7 @@
         });
         player.renderWhenReady(container);
       } else {
-        container.innerHTML = '<div class="fallback">이 브라우저에서는 음악 플레이어를 실행할 수 없습니다.</div>';
+        container.innerHTML = '<p class="player-fallback">이 브라우저에서는 음악 플레이어를 실행할 수 없습니다.</p>';
       }
     </script>
   </body>
