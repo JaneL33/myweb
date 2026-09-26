@@ -1,0 +1,6 @@
+Webamp
+Copyright (c) Jordan Eldredge and contributors
+License: MIT
+
+Source: https://github.com/captbaritone/webamp
+Package version included: 2.3.1

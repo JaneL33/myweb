@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="나루의 작은 홈페이지" />
+    <title>나루</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="home">
+      <div class="banner" aria-hidden="true">
+        <img src="assets/banner.jpg" alt="" />
+      </div>
+      <section class="intro" aria-labelledby="recent-posts-title">
+        <img class="character" src="assets/character.png" alt="상자 안에 앉아 있는 인형" />
+        <div class="recent-posts">
+          <h1 id="recent-posts-title">✕ 최신글</h1>
+          <ol>
+            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
+            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
+            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
+            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
+            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
+            <li><span class="post-title">이건 게시글 제목이 들어가는 곳입니다</span><time datetime="2026-02-02">2026.02.02</time></li>
+          </ol>
+        </div>
+      </section>
+      <section class="player-stage" aria-label="음악 플레이어"><div id="webamp-container"></div></section>
+    </main>
+    <script src="webamp/webamp.bundle.min.js"></script>
+    <script>
+      const container = document.getElementById("webamp-container");
+      if (Webamp.browserIsSupported()) {
+        const player = new Webamp({
+          initialTracks: [{ metaData: { artist: "Måneskin", title: "I WANNA BE YOUR SLAVE" }, url: "music/Måneskin - I WANNA BE YOUR SLAVE (Official Video).mp3" }],
+          initialSkin: { url: "skins/fa11outized v0.3.js" },
+        });
+        player.renderWhenReady(container);
+      } else {
+        container.innerHTML = '<div class="fallback">이 브라우저에서는 음악 플레이어를 실행할 수 없습니다.</div>';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+:root {
+  color-scheme: light;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; margin: 0; }
+
+body {
+  min-width: 320px;
+  background: #fff;
+  color: #3d3d3d;
+  font-size: 13px;
+}
+
+.home {
+  width: min(100% - 32px, 608px);
+  margin: 0 auto;
+  padding: 0 0 64px;
+}
+
+.banner {
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro { display: flex; align-items: center; gap: 0; margin-top: 97px; }
+
+.character { display: block; width: 235px; height: 233px; object-fit: cover; }
+
+.recent-posts { width: 373px; align-self: center; }
+
+.recent-posts h1 {
+  height: 25px;
+  margin: 0;
+  padding: 4px 8px;
+  color: #0001ab;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.recent-posts ol { margin: 0; padding: 0; list-style: none; }
+
+.recent-posts li {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  min-height: 35px;
+  padding: 8px 10px;
+  border-bottom: 1px dashed #cacaca;
+  line-height: 18px;
+}
+
+.post-title {
+  min-width: 0;
+  overflow: hidden;
+  color: #3d3d3d;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+time { margin-left: auto; color: #8c8c8c; white-space: nowrap; }
+
+.player-stage { position: relative; height: 394px; }
+
+#webamp-container {
+  position: absolute;
+  top: 43px;
+  left: 323px;
+  width: 275px;
+  height: 347px;
+}
+
+.fallback {
+  width: 275px;
+  padding: 1rem;
+  border: 1px solid #cacaca;
+  color: #3d3d3d;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .home { width: min(100% - 24px, 440px); }
+  .banner { width: 160px; height: 32px; }
+  .intro { flex-direction: column; align-items: stretch; margin-top: 56px; }
+  .character { width: 190px; height: 189px; margin: 0 auto 22px; }
+  .recent-posts { width: 100%; }
+  .player-stage { height: 408px; }
+  #webamp-container { top: 32px; left: 50%; transform: translateX(-50%); }
+}
+
+@media (max-width: 370px) {
+  .home { width: min(100% - 16px, 440px); }
+  .recent-posts li { padding-inline: 6px; }
+}
