@@ -47,14 +47,13 @@
           </div>
           <section class="just-in" aria-labelledby="just-in-title">
             <h2 class="section-title" id="just-in-title">JUST IN</h2>
-            <div class="media-carousel" data-recent-carousel tabindex="0" aria-label="최근 등록 항목. 드래그, 마우스 휠 또는 방향키로 넘길 수 있습니다.">
-              <div class="media-strip" data-recent-track>
-                <article class="media-item"><a class="media-card" href="#post-fire-emblem"><div class="cover"><img src="assets/figma/raw/source-03.png" alt="파이어 엠블렘: 풍화설월 표지" /></div><p>파이어 엠블렘: 풍화설월</p><span>게임</span></a></article>
-                <article class="media-item"><a class="media-card" href="#post-new-world"><div class="cover"><img src="assets/figma/cover-new-world.png" alt="신세계에서 1 표지" /></div><p>신세계에서 1</p><span>도서</span></a></article>
-                <article class="media-item"><a class="media-card" href="#post-final-fantasy"><div class="cover"><img src="assets/figma/cover-book-one.png" alt="파이널 판타지 6 표지" /></div><p>파이널 판타지 6</p><span>게임</span></a></article>
-                <article class="media-item"><a class="media-card" href="#post-bird"><div class="cover"><img src="assets/figma/cover-final-fantasy.png" alt="눈물을 마시는 새 1 표지" /></div><p>눈물을 마시는 새 1</p><span>도서</span></a></article>
-                <article class="media-item"><a class="media-card" href="#post-click"><div class="cover"><img src="assets/figma/cover-bird.png" alt="CLICK 앨범 이미지" /></div><p>CLICK</p><span>음악</span></a></article>
-              </div>
+            <div class="media-strip">
+              <article class="media-item"><div class="cover"><img src="assets/figma/raw/source-03.png" alt="파이어 엠블렘: 풍화설월 표지" /></div><p>파이어 엠블렘: 풍화설월</p><a href="#game">게임</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/cover-new-world.png" alt="신세계에서 1 표지" /></div><p>신세계에서 1</p><a href="#book">도서</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/cover-book-one.png" alt="파이널 판타지 6 표지" /></div><p>파이널 판타지 6</p><a href="#game">게임</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/cover-final-fantasy.png" alt="눈물을 마시는 새 1 표지" /></div><p>눈물을 마시는 새 1</p><a href="#book">도서</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/cover-bird.png" alt="CLICK 앨범 이미지" /></div><p>CLICK</p><a href="#music">음악</a></article>
+              <article class="media-item"><div class="cover"><img src="assets/figma/raw/source-03.png" alt="파이어 엠블렘: 풍화설월 표지" /></div><p>파이어 엠블렘: 풍화설월</p><a href="#game">게임</a></article>
             </div>
           </section>
         </main>
@@ -80,68 +79,6 @@
         player.renderWhenReady(container);
       } else {
         container.innerHTML = '<p class="player-fallback">이 브라우저에서는 음악 플레이어를 실행할 수 없습니다.</p>';
-      }
-
-      const carousel = document.querySelector("[data-recent-carousel]");
-      const track = document.querySelector("[data-recent-track]");
-      const recentItems = Array.from(track.children).slice(0, 10);
-
-      // 항목이 10개 미만이어도 원본 집합을 앞뒤로 반복해 끊김 없이 계속 넘길 수 있게 합니다.
-      if (recentItems.length) {
-        const copies = () => recentItems.map((item) => item.cloneNode(true));
-        track.replaceChildren(...copies(), ...copies(), ...copies());
-
-        let loopWidth = 0;
-        const setLoopStart = () => {
-          loopWidth = track.scrollWidth / 3;
-          carousel.scrollLeft = loopWidth;
-        };
-        window.addEventListener("load", setLoopStart, { once: true });
-        window.addEventListener("resize", setLoopStart);
-
-        let correcting = false;
-        carousel.addEventListener("scroll", () => {
-          if (correcting || !loopWidth) return;
-          if (carousel.scrollLeft < loopWidth * 0.5) {
-            correcting = true;
-            carousel.scrollLeft += loopWidth;
-            correcting = false;
-          } else if (carousel.scrollLeft > loopWidth * 1.5) {
-            correcting = true;
-            carousel.scrollLeft -= loopWidth;
-            correcting = false;
-          }
-        });
-
-        carousel.addEventListener("wheel", (event) => {
-          if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-          carousel.scrollLeft += event.deltaY;
-          event.preventDefault();
-        }, { passive: false });
-
-        let pointerId = null;
-        let startX = 0;
-        let startLeft = 0;
-        carousel.addEventListener("pointerdown", (event) => {
-          pointerId = event.pointerId;
-          startX = event.clientX;
-          startLeft = carousel.scrollLeft;
-          carousel.setPointerCapture(pointerId);
-          carousel.classList.add("is-dragging");
-        });
-        carousel.addEventListener("pointermove", (event) => {
-          if (event.pointerId === pointerId) carousel.scrollLeft = startLeft - (event.clientX - startX);
-        });
-        const stopDragging = () => {
-          pointerId = null;
-          carousel.classList.remove("is-dragging");
-        };
-        carousel.addEventListener("pointerup", stopDragging);
-        carousel.addEventListener("pointercancel", stopDragging);
-        carousel.addEventListener("keydown", (event) => {
-          if (event.key === "ArrowRight") carousel.scrollBy({ left: 136, behavior: "smooth" });
-          if (event.key === "ArrowLeft") carousel.scrollBy({ left: -136, behavior: "smooth" });
-        });
       }
     </script>
   </body>
