@@ -14,8 +14,6 @@
       <div class="site-grid">
         <aside class="left-rail" aria-label="주 메뉴">
           <div class="profile-image"><img src="assets/figma/profile.png" alt="프로필 이미지" /></div>
-          <div class="small-banner"><img src="assets/figma/sidebar-banner.png" alt="" /></div>
-          <div class="status-panel" aria-label="상태 메시지"></div>
           <nav class="site-nav">
             <a class="is-current" href="#home">홈</a><a href="#about">어바웃 미</a><a href="#calendar">캘린더</a><a href="#gallery">갤러리</a><a href="#original">오리지널</a><a href="#ttrpg">TTRPG</a><a href="#media">미디어 로그</a><a href="#diary">일기장</a><a href="#scrap">스크랩</a><a href="#neighbors">이웃집 식구들</a><a href="#guestbook">방명록</a>
           </nav>
@@ -23,24 +21,30 @@
         </aside>
 
         <main class="main-content" id="home">
-          <section class="game-section" aria-label="추천 게임">
-            <div class="game-screen"><img src="assets/figma/game.png" alt="어두운 방을 배경으로 한 게임 화면" /></div>
-            <div class="game-character"><img src="assets/figma/game-character.png" alt="게임 캐릭터" /></div>
-          </section>
-          <section class="recent-section" aria-labelledby="recent-title">
-            <div class="recent-panel">
-              <h1 class="section-title" id="recent-title">RECENT POSTS</h1>
-              <ol class="post-list">
-                <li><span class="marker">‣</span><a href="#post-1">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
-                <li><span class="marker">‣</span><a href="#post-2">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
-                <li><span class="marker">‣</span><a href="#post-3">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
-                <li><span class="marker">‣</span><a href="#post-4">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
-                <li><span class="marker">‣</span><a href="#post-5">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
-                <li><span class="marker">‣</span><a href="#post-6">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
-              </ol>
+          <div class="main-top">
+            <div class="main-stack">
+              <section class="game-section" aria-label="추천 게임">
+                <div class="game-screen"><img src="assets/figma/game.png" alt="어두운 방을 배경으로 한 게임 화면" /></div>
+              </section>
+              <section class="recent-section" aria-labelledby="recent-title">
+                <div class="recent-panel">
+                  <h1 class="section-title" id="recent-title">RECENT POSTS</h1>
+                  <ol class="post-list">
+                    <li><span class="marker">‣</span><a href="#post-1">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                    <li><span class="marker">‣</span><a href="#post-2">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                    <li><span class="marker">‣</span><a href="#post-3">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                    <li><span class="marker">‣</span><a href="#post-4">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                    <li><span class="marker">‣</span><a href="#post-5">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                    <li><span class="marker">‣</span><a href="#post-6">이건 게시글 제목이 들어가는 곳입니다</a><em>new!</em><time datetime="2026-02-02">2026.02.02</time></li>
+                  </ol>
+                </div>
+              </section>
             </div>
-            <div class="recent-character"><img src="assets/figma/recent-character.png" alt="상자 안에 앉아 있는 인형" /></div>
-          </section>
+            <aside class="my-banner" aria-label="개인 배너">
+              <div class="small-banner"><img src="assets/figma/sidebar-banner.png" alt="" /></div>
+              <a class="status-panel" href="#about" aria-label="소개 페이지"></a>
+            </aside>
+          </div>
           <section class="just-in" aria-labelledby="just-in-title">
             <h2 class="section-title" id="just-in-title">JUST IN</h2>
             <div class="media-strip">
