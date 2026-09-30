@@ -38,13 +38,19 @@ a { color: inherit; }
 .post-list time { margin-left: auto; padding: 0 4px; color: #8c8c8c; white-space: nowrap; }
 .my-banner { display: flex; flex-direction: column; gap: 8px; width: 200px; }
 .just-in { overflow: hidden; }
-.media-strip { display: flex; gap: 12px; width: 600px; min-height: 196px; padding: 12px; overflow: hidden; border: .5px solid #8c8c8c; }
+.media-carousel { width: 600px; overflow-x: auto; border: .5px solid #8c8c8c; cursor: grab; scroll-snap-type: x mandatory; scrollbar-width: none; touch-action: pan-y pinch-zoom; user-select: none; }
+.media-carousel::-webkit-scrollbar { display: none; }
+.media-carousel.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.media-carousel:focus-visible { outline: 2px solid #00e; outline-offset: 3px; }
+.media-strip { display: flex; width: max-content; min-width: 100%; min-height: 196px; gap: 12px; padding: 12px; }
 .media-item { display: flex; width: 124px; flex: 0 0 124px; flex-direction: column; align-items: center; gap: 4px; }
 .cover { display: grid; width: 124px; height: 130px; place-items: center; overflow: hidden; border: .5px solid #838383; background: #fff; }
 .cover img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.media-card { display: flex; width: 124px; flex-direction: column; align-items: center; gap: 4px; color: inherit; scroll-snap-align: start; text-decoration: none; }
 .media-item p { width: 100%; margin: 4px 0 0; overflow: hidden; font-size: 12px; line-height: 15px; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
-.media-item a { color: #0089ea; font-size: 12px; text-decoration: none; }
-.media-item a:hover, .media-item a:focus-visible { text-decoration: underline; }
+.media-card span { color: #0089ea; font-size: 12px; }
+.media-card:hover p, .media-card:focus-visible p, .media-card:hover span, .media-card:focus-visible span { text-decoration: underline; }
+.media-card:focus-visible { outline: 2px solid #00e; outline-offset: 2px; }
 .right-rail { display: flex; flex-direction: column; gap: 8px; }
 .search { display: grid; grid-template-columns: 147px 1fr; height: 24px; }
 .search input { min-width: 0; border: 1px solid #000; border-radius: 0; background: #fff; outline: none; }
